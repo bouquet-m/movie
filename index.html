@@ -8,25 +8,83 @@
 </head>
 <body>
   <header>
-    <h1>映画タイトル</h1>
-    <nav>
+    <img src="images/water.jpg" alt="bouquetロゴ" class="site-logo" style="max-width:180px; width:40vw; height:auto; margin:1.2rem auto 0.5rem; display:block; filter:drop-shadow(0 2px 16px rgba(0,0,0,0.18));">
+    <button class="menu-toggle" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+    <nav class="nav-menu">
       <ul>
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="about.html">作品紹介</a></li>
-        <li><a href="trailer.html">予告編</a></li>
-        <li><a href="contact.html">お問い合わせ</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="trailer.html">Trailer</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <section class="main-visual">
-      <img src="images/poster.jpg" alt="映画ポスター" style="max-width:100%;height:auto;">
-      <h2>キャッチコピーが入ります</h2>
-      <p>ここに映画の簡単な紹介文を入れます。</p>
+    <section class="main-visual fadein">
+      <h2 class="catch">なぜ、それを信じますか？</h2>
+      <p class="tagline">これは真実に基づく、真実を疑う物語。</p>
+    </section>
+
+    <section class="story-section fadein">
+      <h2>Story</h2>
+      <div class="story-content">
+        <p>2024年、ある小さな町で起きた事件。真実と虚偽が交錯する中、人々は何を信じるのか？</p>
+        <p>世の中を震撼させた完全なる誹謗中傷、その先にある本当の物語。</p>
+      </div>
+    </section>
+
+    <section class="cast-section fadein">
+      <h2>Cast</h2>
+      <div class="cast-list">
+        <div class="cast-item">
+          <h3>主演</h3>
+          <p>○○○○</p>
+        </div>
+        <div class="cast-item">
+          <h3>出演</h3>
+          <p>△△△△ / □□□□ / ◇◇◇◇</p>
+        </div>
+        <div class="cast-item">
+          <h3>監督</h3>
+          <p>××××××</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="trailer-preview fadein">
+      <h2>Trailer</h2>
+      <div class="video-placeholder">
+        <img src="images/water.jpg" alt="トレーラー予告編" style="width:100%; max-width:600px; height:auto; border-radius:12px; display:block; margin:0 auto;">
+        <p style="text-align:center; margin-top:1rem; color:#aaa;">トレーラー動画をここに埋め込めます</p>
+      </div>
+    </section>
+
+    <section class="news-section fadein">
+      <h2>News</h2>
+      <div class="news-list">
+        <div class="news-item">
+          <span class="news-date">2026.02.18</span>
+          <p>特設ページ公開</p>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2026.02.15</span>
+          <p>トレーラー映像配信開始</p>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2026.02.10</span>
+          <p>キャスト・スタッフ情報解禁</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section fadein">
+      <h2>More Info</h2>
+      <p>詳しい作品情報はAboutページをご覧ください。</p>
+      <a href="about.html" class="cta-button">作品紹介へ</a>
     </section>
   </main>
   <footer>
-    <p>&copy; 2026 映画タイトル製作委員会</p>
+    <p>&copy; 2026 bouquet製作委婁会</p>
   </footer>
   <script src="script.js"></script>
 </body>
