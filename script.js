@@ -13,12 +13,24 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('scroll', fadeInOnScroll);
   fadeInOnScroll();
 
-  // フォーム送信時のアラート
+  // フォーム送信時の処理
   const form = document.querySelector('form');
   if(form) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      alert('お問い合わせありがとうございます！');
+      
+      // 隠しページへのパスワードチェック
+      const name = document.querySelector('#name')?.value || '';
+      const email = document.querySelector('#email')?.value || '';
+      const message = document.querySelector('#message')?.value || '';
+      
+      if(name === 'ともか' && email === '@おめでとう' && message === '隠しページへ') {
+        // 隠しページへリダイレクト
+        window.location.href = 'hidden.html';
+      } else {
+        alert('お問い合わせありがとうございます！');
+        form.reset();
+      }
     });
   }
 

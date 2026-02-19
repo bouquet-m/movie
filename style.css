@@ -25,7 +25,7 @@
 }
 /* 見出し・リンク・フォント統一 */
 h1, h2, h3, h4 {
-  font-family: 'Noto Sans JP', 'Yu Gothic', 'Meiryo', sans-serif;
+  font-family: 'Playfair Display', 'Noto Serif JP', serif;
   font-weight: 700;
   letter-spacing: 0.06em;
   color: #87ceeb;
@@ -90,6 +90,13 @@ a:hover {
   color: #f5f5f5;
   margin-bottom: 0;
   opacity: 0.92;
+}
+/* 動画のレスポンシブ対応 */
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 /* ハンバーガーメニュー・ナビゲーション */
 .menu-toggle {
@@ -176,7 +183,7 @@ header {
   position: relative;
 }
 body {
-  font-family: 'Yu Gothic', 'Meiryo', 'Noto Sans JP', 'Roboto', sans-serif;
+  font-family: 'Noto Serif JP', serif;
   margin: 0;
   padding: 0;
   background: linear-gradient(135deg, #f5f0ea 0%, #f9f6f0 100%);
@@ -219,6 +226,7 @@ footer {
 }
 button:not(.menu-toggle) {
   background: linear-gradient(90deg, #f0e6d2 0%, #e8d9bb 100%), url('images/rinen.jpg');
+  background-size: 300px;
   background-blend-mode: multiply;
   color: #181818;
   border: none;
@@ -228,14 +236,16 @@ button:not(.menu-toggle) {
   font-weight: bold;
   cursor: pointer;
   margin-top: 1rem;
-  box-shadow: 0 2px 8px rgba(240, 230, 210, 0.18);
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12), 0 8px 20px rgba(135, 206, 235, 0.08), 0 0 30px rgba(135, 206, 235, 0.04);
+  transition: all 0.3s ease;
 }
 button:not(.menu-toggle):hover {
   background: linear-gradient(90deg, #fff5e6 0%, #f0e6d2 100%), url('images/rinen.jpg');
+  background-size: 300px;
   background-blend-mode: multiply;
   color: #181818;
-  box-shadow: 0 4px 12px rgba(240, 230, 210, 0.28);
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18), 0 12px 32px rgba(135, 206, 235, 0.16), 0 0 50px rgba(135, 206, 235, 0.08);
 }
 input, textarea {
   width: 100%;
@@ -277,6 +287,27 @@ input, textarea {
   height: 3px;
   background: linear-gradient(90deg, #87ceeb, #00bfff);
   border-radius: 2px;
+}
+
+/* 広告セクション */
+.advertisement {
+  background: url('images/back_ad.jpg') center/cover no-repeat !important;
+  padding: 0.8rem 1rem !important;
+  box-shadow: none !important;
+  border: none !important;
+  margin: 1rem auto !important;
+  max-width: 900px;
+  border-radius: 0 !important;
+}
+
+.advertisement img {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+  border-radius: 0;
+}
+
+.advertisement img:hover {
+  transform: scale(1.02);
 }
 
 /* Story Section */
@@ -403,20 +434,31 @@ input, textarea {
   display: inline-block;
   padding: 1rem 2.8rem;
   background: linear-gradient(90deg, #f0e6d2 0%, #e8d9bb 100%), url('images/rinen.jpg');
+  background-size: 300px;
   background-blend-mode: multiply;
   color: #181818;
   text-decoration: none;
   border-radius: 28px;
   font-size: 1.2rem;
   font-weight: 700;
-  box-shadow: 0 4px 16px rgba(240, 230, 210, 0.22);
-  transition: all 0.3s;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12), 0 12px 28px rgba(135, 206, 235, 0.12), 0 0 40px rgba(135, 206, 235, 0.06);
+  transition: all 0.3s ease;
   letter-spacing: 0.04em;
 }
 
 .cta-button:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(240, 230, 210, 0.32);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16), 0 16px 40px rgba(135, 206, 235, 0.2), 0 0 60px rgba(135, 206, 235, 0.12);
   background: linear-gradient(90deg, #fff5e6 0%, #f0e6d2 100%), url('images/rinen.jpg');
+  background-size: 300px;
   background-blend-mode: multiply;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 900px) {
+  .main-visual .catch {
+    font-size: 2rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.2rem;
+  }
 }
