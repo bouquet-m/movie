@@ -7,11 +7,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <img src="images/water.jpg" alt="bouquetロゴ" class="site-logo" style="max-width:180px; width:40vw; height:auto; margin:1.2rem auto 0.5rem; display:block; filter:drop-shadow(0 2px 16px rgba(0,0,0,0.18));">
     <button class="menu-toggle" aria-label="メニューを開く"><span></span><span></span><span></span></button>
     <nav class="nav-menu">
       <ul>
@@ -24,20 +24,31 @@
   </header>
   <main>
     <section class="main-visual fadein">
-      <h2 class="catch">この花束を君へ</h2>
+      <div class="slideshow-bg">
+        <!-- スライドショー背景画像はCSS/JSで制御 -->
+      </div>
+      <h2 class="catch">The Bouquet</h2>
       <p class="tagline">一人の残業サラリーマンが人生を進める物語。</p>
     </section>
 
-    <section class="advertisement fadein">
-      <img src="images/dvd.jpg" alt="DVD発売告知" style="width:40%; max-width:none; height:auto; display:block; margin:0 auto;">
+    <section class="advertisement fadein" style="background: rgba(240, 230, 210, 0.04) !important; padding: 0.3rem 1rem !important;">
+      <img src="images/san.png" alt="特設画像" style="width:67%; max-width:none; height:auto; display:block; margin:0 auto;">
     </section>
 
     <section class="story-section fadein">
       <h2>Story</h2>
       <div class="story-content">
-        <p>1999年、物語は始まり、今变貌を遂げる。</p>
-        <p>世の中は何も変わらない。ただ二人だけの世界が創造されゆく。</p>
-        <p>一人の残業サラリーマンが人生を進める物語——それゆえに、これは真実を疑う物語である。</p>
+        <p>1999年、物語は始まり、今変貌を遂げる。</p>
+        <p>世の中は何も変わらない。</p>
+        <p>ただ二人だけの世界が創造されゆく。</p>
+        <p>1人の残サラが人生を進める物語、</p>
+        <p>それゆえに、これは真実を疑う物語である。</p>
+      </div>
+    </section>
+
+    <section class="fadein" style="padding: 1rem 0; border-radius: 0 !important;">
+      <div style="text-align: center;">
+        <img src="images/dvd.jpg" alt="DVD発売告知" style="width:45%; max-width:none; height:auto; display:block; margin:0 auto;">
       </div>
     </section>
 
@@ -46,24 +57,33 @@
       <div class="cast-list">
         <div class="cast-item">
           <h3>主演</h3>
-          <p>女柁原 央</p>
+          <p>大海 ユキ</p>
         </div>
         <div class="cast-item">
           <h3>出演</h3>
-          <p>鯨根岩音 / 江釛瑠乞 / 流矩武 等</p>
-        </div>
-        <div class="cast-item">
-          <h3>監督</h3>
-          <p>プロ坊主</p>
+          <p>佐々木 桂四</p>
+          <p>群同 美幸</p>
+          <p>谷口 章大</p>
         </div>
       </div>
-    </section>
-
-    <section class="trailer-preview fadein">
-      <h2>Trailer</h2>
-      <div class="video-placeholder">
-        <img src="images/water.jpg" alt="トレーラー予告編" style="width:100%; max-width:600px; height:auto; border-radius:12px; display:block; margin:0 auto;">
-        <p style="text-align:center; margin-top:1rem; color:#aaa;">トレーラー動画をここに埋め込めます</p>
+      <h2 style="margin-top: 2rem;">STAFF</h2>  
+      <div class="cast-list" style="grid-template-columns: 1fr;">
+        <div class="cast-item">
+          <h3>監督・脚本</h3>
+          <p>オドア・ヨハンセン</p>
+        </div>
+        <div class="cast-item">
+          <h3 style="margin-top: 1rem;">撮影</h3>
+          <p>遠藤 大兎</p>
+        </div>
+        <div class="cast-item">
+          <h3 style="margin-top: 1rem;">音楽</h3>
+          <p>sora</p>
+        </div>
+        <div class="cast-item">
+          <h3 style="margin-top: 1rem;">編集</h3>
+          <p>勝俣 健二</p>
+        </div>
       </div>
     </section>
 
@@ -89,10 +109,26 @@
       <h2>More Info</h2>
       <p>詳しい作品情報はAboutページをご覧ください。</p>
       <a href="about.html" class="cta-button">作品紹介へ</a>
+      <div class="release-info">
+        <div class="release-date">
+          <span class="release-day">3.17</span>
+          <span class="release-day-of-week">Tue</span>
+        </div>
+        <div class="distribution">
+          <span>配給：Studio Que-A</span>
+          <img src="images/Que.jpeg" alt="Studio Que-A ロゴ" class="distribution-logo">
+        </div>
+      </div>
     </section>
   </main>
   <footer>
-    <p>&copy; 2026 bouquet製作委員会</p>
+    <div class="social-links">
+      <a href="https://line.me/R/ti/p/" target="_blank" rel="noopener" aria-label="LINE"><i class="fab fa-line"></i></a>
+      <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>&copy; 2026 The Bouquet製作委員会</p>
   </footer>
   <script src="script.js"></script>
 </body>
