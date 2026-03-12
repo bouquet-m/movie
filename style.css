@@ -8,6 +8,59 @@
   src: url('font/BOOKOS.TTF') format('truetype');
 }
 
+@font-face {
+  font-family: 'LHANDW';
+  src: url('font/LHANDW.TTF') format('truetype');
+}
+
+/* === \u30ed\u30fc\u30c7\u30a3\u30f3\u30b0\u753b\u9762 === */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(245, 240, 234, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease-out;
+}
+
+.loading-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-content {
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+  animation: spin 2s linear infinite;
+}
+
+.loading-content p {
+  font-size: 1rem;
+  color: #597fad;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* === テーマカラー定義（一か所で管理） === */
 :root {
   /* 主要色 */
@@ -96,61 +149,41 @@ a:hover {
 .main-visual {
   overflow: hidden;
   text-align: center;
-  margin: 4rem auto 5rem auto;
-  padding: 4rem 2rem 3.5rem 2rem;
-  border-radius: 32px;
-  box-shadow: 0 12px 48px var(--theme-primary-12);
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
   position: relative;
-  max-width: 900px;
-  border: 2px solid var(--theme-primary-20);
-  min-height: 500px;
+  width: 100vw;
+  border: none;
+  min-height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  max-width: none;
 }
 .slideshow-bg {
+  display: none;
+}
+
+.poster-image {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
-  border-radius: 32px;
-  overflow: hidden;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .slideshow-bg .slide-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1.2s ease-in-out;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: brightness(0.55);
+  display: none;
 }
-.slideshow-bg .slide-img.active {
-  opacity: 1;
-}
-.slideshow-bg .slide-img.a { background-image: url('images/hana_a.png'); }
-.slideshow-bg .slide-img.b { background-image: url('images/hana_b.png'); }
-.slideshow-bg .slide-img.c { background-image: url('images/hana_c.png'); }
 
-/* 白の薄いベール */
+/* ベール（削除） */
 .slideshow-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.65);
-  pointer-events: none;
-  z-index: 2;
+  display: none;
 }
 .main-visual img {
   max-width: 320px;
@@ -159,8 +192,21 @@ a:hover {
   margin-bottom: 2.2rem;
   filter: drop-shadow(0 4px 24px rgba(0,0,0,0.25));
 }
+
+.main-visual .poster-image {
+  max-width: none !important;
+  width: 100% !important;
+  height: auto !important;
+  margin-bottom: 0 !important;
+  filter: none !important;
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  object-fit: unset;
+}
+
 .main-visual h2 {
-  font-family: 'BRADHITC', sans-serif;
+  font-family: 'LHANDW', sans-serif;
   font-size: 10rem;
   font-weight: 400;
   color: #ffe066;
@@ -281,22 +327,29 @@ body {
   color: var(--text-primary);
   line-height: 1.7;
   letter-spacing: 0.03em;
+  overflow-x: hidden;
+}
+html {
+  overflow-x: hidden;
+}
+main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: contents;
 }
 header {
-  background: rgba(240, 230, 210, 0.6);
-  color: var(--text-primary);
-  padding: 2.5rem 0 1.5rem 0;
-  text-align: center;
-  box-shadow: 0 2px 16px var(--theme-primary-08);
-  backdrop-filter: blur(8px);
-  position: relative;
-  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  padding: 1.5rem 1.5rem;
+  box-shadow: none;
+  backdrop-filter: none;
+  z-index: 1001;
 }
-.main-visual {
-  text-align: center;
-  margin: 2rem 0;
-}
-section {
+main > section:not(.main-visual) {
   margin: 3rem auto;
   max-width: 900px;
   background: rgba(255, 255, 255, 0.8);
